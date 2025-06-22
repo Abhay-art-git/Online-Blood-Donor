@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Blood Donor Portal</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Donate Blood, Save Lives</h1>
+      <p>Your one unit of blood can save three lives.</p>
+      <div class="hero-buttons">
+        <a href="/register" class="btn btn-primary">Become a Donor</a>
+        <a href="/search" class="btn btn-secondary">Find a Donor</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About / How It Works -->
+  <section class="info-section">
+    <h2>How It Works</h2>
+    <div class="info-cards">
+      <div class="card">
+        <h3>1. Register</h3>
+        <p>Create your donor profile with contact and blood group.</p>
+      </div>
+      <div class="card">
+        <h3>2. Search</h3>
+        <p>Users in need can search for donors by location & group.</p>
+      </div>
+      <div class="card">
+        <h3>3. Connect</h3>
+        <p>We help connect donors and receivers instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <h2>We’ve Helped Save Lives</h2>
+    <div class="stats-cards">
+      <div class="stat-card">
+        <h3>2,300+</h3>
+        <p>Registered Donors</p>
+      </div>
+      <div class="stat-card">
+        <h3>850+</h3>
+        <p>Successful Donations</p>
+      </div>
+      <div class="stat-card">
+        <h3>1,200+</h3>
+        <p>Requests Completed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <h2>Ready to Save a Life?</h2>
+    <a href="/register" class="btn btn-highlight">Join as a Donor</a>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="/js/script.js"></script>
+</body>
+</html>
