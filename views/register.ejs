@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Blood Donor Portal</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container py-5">
+    <h2>Register as a Donor</h2>
+    <form method="POST" action="/register">
+      <input name="name" placeholder="Full Name" required><br>
+      <input name="age" type="number" placeholder="Age" required><br>
+      <select name="gender">
+        <option>Male</option><option>Female</option><option>Other</option>
+      </select><br>
+      <select name="blood_group">
+        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option>
+      </select><br>
+      <input name="phone" placeholder="Phone" required><br>
+      <input name="email" type="email" placeholder="Email" required><br>
+      <input name="city" placeholder="City" required><br>
+      <input name="state" placeholder="State" required><br>
+      <input name="last_donation_date" type="date"><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <%- include('partials/footer') %>
+</body>
+</html>
