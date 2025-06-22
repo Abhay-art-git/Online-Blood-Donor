@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Donors</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container py-5">
+    <h2>Search Donors</h2>
+    <form method="POST" action="/search">
+      <select name="blood_group" required>
+        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option>
+      </select>
+      <input name="location" placeholder="City or State">
+      <button type="submit">Search</button>
+    </form>
+
+    <% if (typeof results !== 'undefined') { %>
+      <h3>Results:</h3>
+      <table>
+        <tr><th>Name</th><th>Group</th><th>City</th><th>Phone</th></tr>
+        <% results.forEach(d => { %>
+          <tr>
+            <td><%= d.name %></td>
+            <td><%= d.blood_group %></td>
+            <td><%= d.city %></td>
+            <td><%= d.phone %></td>
+          </tr>
+        <% }) %>
+      </table>
+    <% } %>
+  </div>
+  <%- include('partials/footer') %>
+</body>
+</html>
