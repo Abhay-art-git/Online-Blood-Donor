@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Blood</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container py-5">
+    <h2>Request Blood</h2>
+    <form method="POST" action="/request">
+      <input name="name" placeholder="Full Name" required><br>
+      <select name="blood_group">
+        <option>A+</option><option>B+</option><option>O+</option><option>AB+</option>
+      </select><br>
+      <input name="contact" placeholder="Phone" required><br>
+      <input name="email" placeholder="Email" required><br>
+      <input name="location" placeholder="Location" required><br>
+      <textarea name="reason" placeholder="Reason" rows="4"></textarea><br>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+  <%- include('partials/footer') %>
+</body>
+</html>
