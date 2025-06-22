@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+  <div class="container py-5">
+    <h2>Contact Us</h2>
+    <form method="POST" action="/contact">
+      <input name="name" placeholder="Your Name" required><br>
+      <input name="email" type="email" placeholder="Email" required><br>
+      <input name="subject" placeholder="Subject" required><br>
+      <textarea name="message" placeholder="Message" rows="4"></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  <%- include('partials/footer') %>
+</body>
+</html>
