@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    .card {
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard-metric {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container py-5">
+    <h2 class="mb-4 text-center text-danger">Admin Dashboard</h2>
+
+    <!-- Metric Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="card bg-danger text-white text-center p-4">
+          <h4>Total Donors</h4>
+          <div class="dashboard-metric"><%= donorCount %></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-warning text-dark text-center p-4">
+          <h4>Total Requests</h4>
+          <div class="dashboard-metric"><%= requestCount %></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-info text-white text-center p-4">
+          <h4>Total Messages</h4>
+          <div class="dashboard-metric"><%= contactCount %></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Requests Table -->
+    <% if (typeof recentRequests !== 'undefined' && recentRequests.length > 0) { %>
+    <div class="mt-5">
+      <h4 class="mb-3">Recent Blood Requests</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Blood Group</th>
+              <th>Contact</th>
+              <th>Location</th>
+              <th>Reason</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% recentRequests.forEach(req => { %>
+              <tr>
+                <td><%= req.name %></td>
+                <td><%= req.blood_group %></td>
+                <td><%= req.contact %></td>
+                <td><%= req.location %></td>
+                <td><%= req.reason %></td>
+                <td><%= req.request_date.toDateString ? req.request_date.toDateString() : req.request_date %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <% } else { %>
+      <p class="text-muted">No recent requests to display.</p>
+    <% } %>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
