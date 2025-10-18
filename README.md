@@ -50,6 +50,6 @@ This platform can be used by hospitals, NGOs, or individuals to **facilitate blo
 ## 🚀 Installation & Setup
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/online-blood-donor.git
+git clone https://github.com/Abhay-art-git/online-blood-donor.git
 cd online-blood-donor
 
